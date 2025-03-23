@@ -1,0 +1,13 @@
+# .gitignore file content:
+.DS_Store
+*.log
+*.swp
+*.bak
+*.tmp
+.cache/
+.conda/
+.config/
+.vscode/
+.venv/
+.idea/
+*.pyc
