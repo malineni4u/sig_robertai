@@ -67,17 +67,104 @@
 
 ---
 
+---
+
 ## 🔁 Power of Two Models – Smart Fallback
 
 Sigma-AI intelligently uses:
 - ⚡ **Primary**: OpenAI GPT-3.5 for RCA generation
 - 🔄 **Fallback**: Hugging Face Mistral 7B when OpenAI quota limits apply
 
-## Prerequisites
+---
 
-- Python 3.8 or higher
-- pip (Python package installer)
-- Git (optional)
+## 📐 Incident Similarity Search with Gaussian Distance
+
+```
+S(x, y) = exp(-‖x - y‖² / (2 * σ²))
+```
+
+- `‖x - y‖²`: Squared Euclidean distance
+- `σ`: Scaling factor
+- Returns smooth similarity scores for better ranking precision
+
+---
+
+## 🧠 Intelligence Stack
+
+Sigma-AI brings together multiple components to power its intelligence:
+
+- 🔡 **Embedding Model**: `all-MiniLM-L6-v2` from SentenceTransformers  
+  Used to convert natural language text into dense vector representations
+
+- 🔍 **Vector Search Engine**: FAISS  
+  Performs high-speed similarity search using Gaussian Distance metric
+
+- 🧠 **LLMs (Large Language Models)**:
+  - **Primary**: OpenAI GPT-3.5 – Used for contextual RCA generation and suggestions
+  - **Fallbacks**:
+    - Hugging Face's **Mistral 7B**
+    - `LaMini-Flan-T5-783M` – A compact and CPU-friendly open model for generating resolution summaries
+
+This hybrid architecture ensures the platform remains responsive, explainable, and works even in limited environments without internet or API access.
+
+---
+
+## 📂 Project Structure
+
+```
+.
+├── streamlit_app.py
+├── app/
+│   ├── data_loader.py
+│   ├── vector_search.py
+│   ├── model_runner.py
+│   ├── change_checker.py
+│   └── log_checker.py
+├── data/
+│   ├── incident_data.csv
+│   ├── change.csv
+│   ├── CMDB_Mapping.csv
+│   └── Logs_Lookup.csv
+└── requirements.txt
+```
+
+---
+
+## System Architecture
+
+```
+User Input (Incident ID or Free Text)
+        |
+[Embedding Model: all-MiniLM-L6-v2]
+        |
+   [Vector Embedding]
+        |
+FAISS Similarity Search (Gaussian Distance)
+        |
+Retrieve Top-K Similar Incidents
+        |
+[LLM: GPT / Mistral]
+→ RCA Generation   → Resolution Suggestion
+        |
+CR + Log Correlation (CMDB + Trace ID)
+```
+
+---
+
+## LLM & Intelligence Stack
+
+- 🔡 **Embedding**: `all-MiniLM-L6-v2` via SentenceTransformers
+- 🔍 **Vector DB**: FAISS with **Gaussian Distance**  
+  ```
+  S(x, y) = exp(-‖x - y‖² / (2 * σ²))
+  ```
+- 🧠 **LLMs**:
+  - OpenAI GPT-3.5 (Primary)
+  - Mistral 7B (Hugging Face fallback)
+  - `LaMini-Flan-T5-783M` (lightweight fallback)
+
+---
+
 
 ---
 
@@ -109,28 +196,7 @@ streamlit run streamlit_app.py
 
 ---
 
-## Features
 
-- 🧠 **Smart Issue Explorer**  
-  Convert any natural language issue into vector embeddings and search similar incidents. Get RCA and related CRs powered by LLMs.  
-  ![Smart Issue Explorer](https://img.icons8.com/emoji/48/brain-emoji.png)
-
-- 🧾 **Incident Investigator**  
-  Enter a specific incident ID to generate contextual RCA, show related CRs, and suggest resolution.  
-  ![Incident Investigator](https://img.icons8.com/ios-filled/50/document--v1.png)
-
-- 🧬 **TraceIQ**  
-  Feed logs from APIs, analyze them using LLMs, and receive suggestions based on trace ID and log content.  
-  ![TraceIQ](https://img.icons8.com/ios-filled/50/dna-helix.png)
-
-- 🌐 **NetViz Explorer**  
-  Visualize app-to-CI/API dependencies using CMDB mapping and explore how components are connected.  
-  ![NetViz Explorer](https://img.icons8.com/ios-filled/50/internet.png)
-
-- 💬 **Agentic Chatbot**  
-  Ask questions, explore suggestions, and receive guidance directly through an LLM-powered assistant.
-
----
 
 ## Usage
 
@@ -150,40 +216,9 @@ streamlit run streamlit_app.py
 
 ---
 
-## LLM & Intelligence Stack
 
-- 🔡 **Embedding**: `all-MiniLM-L6-v2` via SentenceTransformers
-- 🔍 **Vector DB**: FAISS with **Gaussian Distance**  
-  ```
-  S(x, y) = exp(-‖x - y‖² / (2 * σ²))
-  ```
-- 🧠 **LLMs**:
-  - OpenAI GPT-3.5 (Primary)
-  - Mistral 7B (Hugging Face fallback)
-  - `LaMini-Flan-T5-783M` (lightweight fallback)
 
----
 
-## System Architecture
-
-```
-User Input (Incident ID or Free Text)
-        |
-[Embedding Model: all-MiniLM-L6-v2]
-        |
-   [Vector Embedding]
-        |
-FAISS Similarity Search (Gaussian Distance)
-        |
-Retrieve Top-K Similar Incidents
-        |
-[LLM: GPT / Mistral]
-→ RCA Generation   → Resolution Suggestion
-        |
-CR + Log Correlation (CMDB + Trace ID)
-```
-
----
 
 ## License
 
@@ -197,5 +232,3 @@ MIT License
 - OpenAI
 - Streamlit
 - FAISS team
-- BITS Pilani Hackathon Team
-
