@@ -1,12 +1,17 @@
 
-# 🤖 Sigma-AI – GenAI-Powered Integrated Platform Environment
+# 🤖 GenAI-Powered Integrated Platform Environment
 
-Sigma-AI is a GenAI-enabled platform that integrates multiple engineering tools into one intelligent interface, reducing context switching and enhancing RCA and observability through LLMs, FAISS vector search, and Agentic AI capabilities.
+![Agentic AI](https://img.shields.io/badge/Powered_by-Agentic_AI-blueviolet?style=for-the-badge&logo=openai&logoColor=white)
+![Context-Aware](https://img.shields.io/badge/Contextual-Recommendations-blue)
+![Streamlit](https://img.shields.io/badge/Built_with-Streamlit-orange)
+
+**Sigma-AI** is a **GenAI-enabled** Integrated Platform Environment (IPE) that empowers platform engineers by reducing context switching across tools. It brings observability, RCA generation, network analysis, and intelligent insights into a unified interface using vector search, CMDB correlations, and LLM-powered workflows.
 
 ---
 
 ## Table of Contents
 
+1. [Steamlit UI Overview](#User-Interface)
 1. [Prerequisites](#prerequisites)
 2. [Installation](#installation)
 3. [Configuration](#configuration)
@@ -20,6 +25,32 @@ Sigma-AI is a GenAI-enabled platform that integrates multiple engineering tools 
 11. [Acknowledgments](#acknowledgments)
 
 ---
+
+## 🖥️ User-Interface Overview
+
+---
+
+- 🧠 **Smart Issue Explorer**  
+  Convert any natural language issue into vector embeddings and search similar incidents. Get RCA and related CRs powered by LLMs.  
+  ![Smart Issue Explorer](https://img.icons8.com/emoji/48/brain-emoji.png)
+
+- 🧾 **Incident Investigator**  
+  Enter a specific incident ID to generate contextual RCA, show related CRs, and suggest resolution.  
+  ![Incident Investigator](https://img.icons8.com/ios-filled/50/document--v1.png)
+
+- 🧬 **TraceIQ**  
+  Feed logs from APIs, analyze them using LLMs, and receive suggestions based on trace ID and log content.  
+  ![TraceIQ](https://img.icons8.com/ios-filled/50/dna-helix.png)
+
+- 🌐 **NetViz Explorer**  
+  Visualize app-to-CI/API dependencies using CMDB mapping and explore how components are connected.  
+  ![NetViz Explorer](https://img.icons8.com/ios-filled/50/internet.png)
+
+- 💬 **Agentic Chatbot**  
+  Ask questions, explore suggestions, and receive guidance directly through an LLM-powered assistant.
+
+---
+
 
 ## Prerequisites
 
