@@ -112,3 +112,24 @@ We welcome PRs, ideas, and feedback to improve Sigma-AI for platform teams.
 ---
 
 Let’s build an intelligent, self-healing future together with Sigma-AI.
+
+---
+
+## 🧠 Intelligence Stack
+
+Sigma-AI brings together multiple components to power its intelligence:
+
+- 🔡 **Embedding Model**: `all-MiniLM-L6-v2` from SentenceTransformers  
+  Used to convert natural language text into dense vector representations
+
+- 🔍 **Vector Search Engine**: FAISS  
+  Performs high-speed similarity search using Gaussian Distance metric
+
+- 🧠 **LLMs (Large Language Models)**:
+  - **Primary**: OpenAI GPT-3.5 – Used for contextual RCA generation and suggestions
+  - **Fallbacks**:
+    - Hugging Face's **Mistral 7B**
+    - `LaMini-Flan-T5-783M` – A compact and CPU-friendly open model for generating resolution summaries
+
+This hybrid architecture ensures the platform remains responsive, explainable, and works even in limited environments without internet or API access.
+
