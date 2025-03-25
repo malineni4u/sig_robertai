@@ -1,3 +1,4 @@
+
 # 🤖 Sigma-AI – GenAI-Powered Integrated Platform Environment
 
 ![Agentic AI](https://img.shields.io/badge/Powered_by-Agentic_AI-blueviolet)
@@ -31,101 +32,124 @@
 ![Sigma-AI UI Preview](docs/sigma_ui_preview.jpg)
 
 - 🧠 **Smart Issue Explorer**  
-  Convert any natural language issue into vector embeddings and search for similar incidents. Get RCA and related change requests (CRs) powered by LLMs.
-  - Converts input into vector embeddings.
-  - Uses FAISS with Gaussian Distance to find similar past incidents.
-  - Provides:
-    - Contextual incident matches.
-    - Relevant RCA suggestions.
-    - Correlated CRs based on configuration items (CIs) and timing.
-    - Helpful resolution summaries and log summarization.
-
+  Convert natural language issues into embeddings and search similar incidents.
 - 🧾 **Incident Investigator**  
-  Enter a specific incident ID to generate contextual RCA, show related CRs, and suggest resolutions.
-  - Retrieves historical matches.
-  - Applies LLM to generate a **Root Cause Analysis (RCA)**.
-  - Suggests probable causes and next steps.
-
+  Specific incident ID analysis and RCA generation.
 - 🧬 **TraceIQ**  
-  Feed logs from APIs, analyze them using LLMs, and receive suggestions based on trace ID and log content.
-  - Reads logs from connected log injection APIs.
-  - Applies LLM to suggest possible fixes.
-  - Helps platform teams derive meaning from complex logs.
-
+  Analyze logs from APIs using LLMs to suggest fixes.
 - 🌐 **NetViz Explorer**  
-  Visualize app-to-CI/API dependencies using CMDB mapping and explore how components are connected.
-  - Builds a **dynamic network diagram** from CMDB data.
-  - Displays app-to-CI/API relationships.
-  - Helps teams understand dependency paths and potential breakpoints.
-  - Includes GenAI capability to suggest, summarize, and debug architectural issues.
-
+  Visualize dependencies dynamically with CMDB mapping.
 - 💬 **Agentic Chatbot**  
-  Ask questions, explore suggestions, and receive guidance directly through an LLM-powered assistant.
-  - Self-help for generalized platform queries.
-  - Guidance on Sigma-AI usage.
-  - Fast answers to system and RCA-related questions.
-  - Direct interaction with knowledge embedded from your incidents, CRs, and CMDB.
+  Interactive assistance for queries and support.
 
 ---
 
 ## 🔁 Power of Two Models – Smart Fallback
 
-Sigma-AI intelligently uses:
 - ⚡ **Primary**: OpenAI GPT-3.5 for RCA generation.
-- 🔄 **Fallback**: Hugging Face Mistral 7B when OpenAI quota limits apply.
-
----
-
-## 📊 Sigma-AI Architecture
-
-<p align="center">
-  <img src="docs/mermain-chart.png" alt="Sigma AI Architecture Diagram" width="700"/>
-</p>
+- 🔄 **Fallback**: Hugging Face Mistral 7B.
 
 ---
 
 ## 📐 Incident Similarity Search with L2 (Euclidean) Distance
 
-Sigma-AI uses **FAISS** for high-performance similarity search based on **squared Euclidean (L2) distance**. This is used to compare vector embeddings and retrieve semantically similar incidents.
+Sigma-AI utilizes FAISS for efficient similarity search:
 
-### 📏 L2 (Euclidean) Distance
+```
+distance = sqrt((x₁ - y₁)² + (x₂ - y₂)² + ... + (xₙ - yₙ)²)
 
-The standard Euclidean distance between two vectors **x** and **y** is:
-
-<div align="center">
-
-$$
-\text{distance} = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n - y_n)^2}
-$$
-
-</div>
-
-However, **FAISS** returns the **squared distance** to avoid computing the square root, which is faster and sufficient for ranking:
-
-<div align="center">
-
-$$
-\text{squared\_distance} = \sum_{i=1}^{n}(x_i - y_i)^2
-$$
-
-</div>
-
-This method ensures efficient and accurate nearest-neighbor search across high-dimensional embeddings.
+squared_distance = Σ(xᵢ - yᵢ)²
+```
 
 ---
 
 ## 🧠 Intelligence Stack
 
-Sigma-AI brings together multiple components to power its intelligence:
-
-- 🔡 **Embedding Model**: `all-MiniLM-L6-v2` from SentenceTransformers.
-- 🔍 **Vector Search Engine**: FAISS.
-- 🧠 **LLMs**:
-  - OpenAI GPT-3.5.
-  - Hugging Face's Mistral 7B.
-  - `LaMini-Flan-T5-783M`.
+- 🔡 Embedding: `all-MiniLM-L6-v2`
+- 🔍 Vector Search Engine: FAISS
+- 🧠 LLMs:
+  - OpenAI GPT-3.5
+  - Hugging Face Mistral 7B
+  - LaMini-Flan-T5-783M
 
 ---
 
 ## 📂 Project Structure
 
+```
+.
+├── streamlit_app.py
+├── app/
+│   ├── data_loader.py
+│   ├── vector_search.py
+│   ├── model_runner.py
+│   ├── change_checker.py
+│   └── log_checker.py
+├── data/
+│   ├── incident_data.csv
+│   ├── change.csv
+│   ├── CMDB_Mapping.csv
+│   └── Logs_Lookup.csv
+└── requirements.txt
+```
+
+---
+
+## 🧱 System Architecture
+
+```
+User Input → Embeddings → FAISS → Top-K Incidents → LLM (GPT-3.5/Mistral) → RCA & Suggestions → CR + Logs (CMDB, TraceID)
+```
+
+---
+
+## 🛠️ Installation
+
+```bash
+git clone https://github.com/your-username/sigma-ai.git
+cd sigma-ai
+pip install -r requirements.txt
+```
+
+---
+
+## ⚙️ Configuration
+
+```bash
+export OPENAI_API_KEY=your-key
+```
+
+---
+
+## 🚀 Running the Application
+
+```bash
+streamlit run streamlit_app.py
+```
+
+---
+
+## 🎯 Usage
+
+Use the provided tabs and chatbot for comprehensive incident and log management.
+
+---
+
+## 🔧 Troubleshooting
+
+Check API keys, model availability, and API connectivity.
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## 🙏 Acknowledgments
+
+- Hugging Face
+- OpenAI
+- Streamlit
+- FAISS team
