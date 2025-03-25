@@ -77,12 +77,8 @@ Sigma-AI intelligently uses:
 
 ---
 ## Incident Analysis Flow Daigram 
-<h3 align="center">📊 Sigma-AI Architecture</h3>
 
-<p align="center">
-  <img src="docs/mermain-chart.svg" alt="Sigma AI Architecture Diagram" width="100%" />
-</p>
-
+![Flow_Diagram](docs/mermain-chart.png)
 
 ---
 
