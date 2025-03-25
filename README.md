@@ -76,6 +76,15 @@ Sigma-AI intelligently uses:
 - 🔄 **Fallback**: Hugging Face Mistral 7B when OpenAI quota limits apply
 
 ---
+## Incident Analysis Flow Daigram 
+<h3 align="center">📊 Sigma-AI Architecture</h3>
+
+<p align="center">
+  <img src="docs/sigma_architecture.svg" alt="Sigma AI Architecture Diagram" width="100%" />
+</p>
+
+
+---
 
 ## 📐 Incident Similarity Search with L2 (Euclidean) Distance
 
