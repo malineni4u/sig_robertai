@@ -1,7 +1,7 @@
 
 # 🤖 GenAI-Powered Integrated Platform Environment
 
-![Agentic AI](https://img.shields.io/badge/Powered_by-Agentic_AI-blueviolete)
+![Agentic AI](https://img.shields.io/badge/Powered_by-Agentic_AI-blueviolet)
 ![Context-Aware](https://img.shields.io/badge/Contextual-Recommendations-blue)
 ![Streamlit](https://img.shields.io/badge/Built_with-Streamlit-orange)
 
@@ -11,24 +11,24 @@
 
 ## Table of Contents
 
-1. [Steamlit UI Overview](#User-Interface)
-1. [Prerequisites](#prerequisites)
-2. [Modesl](#Power)
-3. [Configuration](#configuration)
-4. [Running the Application](#running-the-application)
-5. [Features](#features)
-6. [Usage](#usage)
-7. [Troubleshooting](#troubleshooting)
-8. [LLM & Intelligence Stack](#llm--intelligence-stack)
-9. [System Architecture](#system-architecture)
-10. [License](#license)
-11. [Acknowledgments](#acknowledgments)
+1. [User-Interface Overview](#user-interface-overview)
+2. [Power of Two Models – Smart Fallback](#-power-of-two-models--smart-fallback)
+3. [Incident Similarity Search with Gaussian Distance](#-incident-similarity-search-with-gaussian-distance)
+4. [Intelligence Stack](#-intelligence-stack)
+5. [Project Structure](#project-structure)
+6. [System Architecture](#system-architecture)
+7. [LLM & Intelligence Stack](#llm--intelligence-stack)
+8. [Installation](#installation)
+9. [Configuration](#configuration)
+10. [Running the Application](#running-the-application)
+11. [Usage](#usage)
+12. [Troubleshooting](#troubleshooting)
+13. [License](#license)
+14. [Acknowledgments](#acknowledgments)
 
 ---
 
 ## 🖥️ User-Interface Overview
-
----
 
 - 🧠 **Smart Issue Explorer**  
   Convert any natural language issue into vector embeddings and search similar incidents. Get RCA and related CRs powered by LLMs. 
@@ -67,8 +67,6 @@
 
 ---
 
----
-
 ## 🔁 Power of Two Models – Smart Fallback
 
 Sigma-AI intelligently uses:
@@ -94,18 +92,11 @@ S(x, y) = exp(-‖x - y‖² / (2 * σ²))
 Sigma-AI brings together multiple components to power its intelligence:
 
 - 🔡 **Embedding Model**: `all-MiniLM-L6-v2` from SentenceTransformers  
-  Used to convert natural language text into dense vector representations
-
 - 🔍 **Vector Search Engine**: FAISS  
-  Performs high-speed similarity search using Gaussian Distance metric
-
-- 🧠 **LLMs (Large Language Models)**:
-  - **Primary**: OpenAI GPT-3.5 – Used for contextual RCA generation and suggestions
-  - **Fallbacks**:
-    - Hugging Face's **Mistral 7B**
-    - `LaMini-Flan-T5-783M` – A compact and CPU-friendly open model for generating resolution summaries
-
-This hybrid architecture ensures the platform remains responsive, explainable, and works even in limited environments without internet or API access.
+- 🧠 **LLMs**:
+  - OpenAI GPT-3.5
+  - Hugging Face's Mistral 7B
+  - `LaMini-Flan-T5-783M`
 
 ---
 
@@ -153,18 +144,12 @@ CR + Log Correlation (CMDB + Trace ID)
 
 ## LLM & Intelligence Stack
 
-- 🔡 **Embedding**: `all-MiniLM-L6-v2` via SentenceTransformers
-- 🔍 **Vector DB**: FAISS with **Gaussian Distance**  
-  ```
-  S(x, y) = exp(-‖x - y‖² / (2 * σ²))
-  ```
+- 🔡 **Embedding**: `all-MiniLM-L6-v2`
+- 🔍 **Vector DB**: FAISS (Gaussian Distance)  
 - 🧠 **LLMs**:
-  - OpenAI GPT-3.5 (Primary)
-  - Mistral 7B (Hugging Face fallback)
-  - `LaMini-Flan-T5-783M` (lightweight fallback)
-
----
-
+  - OpenAI GPT-3.5
+  - Mistral 7B
+  - LaMini-Flan-T5-783M
 
 ---
 
@@ -180,8 +165,6 @@ pip install -r requirements.txt
 
 ## Configuration
 
-### OpenAI API
-Set your OpenAI API key in the environment:
 ```bash
 export OPENAI_API_KEY=your-key
 ```
@@ -196,29 +179,23 @@ streamlit run streamlit_app.py
 
 ---
 
-
-
 ## Usage
 
-1. Use **Smart Issue Explorer** to describe symptoms or paste incident text.
-2. Use **Incident Investigator** to explore a specific incident ID.
-3. Use **TraceIQ** to explore logs by trace ID.
-4. Use **NetViz Explorer** to explore visual relationships between services and CIs.
-5. Use the built-in chatbot for self-help queries.
+1. Use Smart Issue Explorer to describe symptoms.
+2. Use Incident Investigator with an incident ID.
+3. Use TraceIQ for log analysis.
+4. Use NetViz Explorer for dependency mapping.
+5. Use the chatbot for self-help queries.
 
 ---
 
 ## Troubleshooting
 
-- Ensure OpenAI API key is correctly set.
-- For Hugging Face models, ensure you have internet access or install models locally.
-- If logs fail to load, verify log injection API is connected.
+- Ensure OpenAI API key is configured.
+- Confirm Hugging Face models are accessible or installed.
+- Ensure log injection APIs are operational.
 
 ---
-
-
-
-
 
 ## License
 
