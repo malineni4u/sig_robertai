@@ -76,12 +76,7 @@ Sigma-AI intelligently uses:
 - ⚡ **Primary**: OpenAI GPT-3.5 for RCA generation
 - 🔄 **Fallback**: Hugging Face Mistral 7B when OpenAI quota limits apply
 
----
-## 📊 Sigma-AI Architecture
 
-<p align="center">
-  <img src="docs/mermain-chart.png" alt="Sigma AI Architecture Diagram" width="700"/>
-</p>
 
 ---
 
