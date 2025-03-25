@@ -18,11 +18,8 @@
 ## 🧠 How It Works
 
 <p align="center">
-  <img src="docs/vectordb.png" alt="Vector Embedding Process" width="7500" height="350"/>
+  <img src="docs/vector_embedding_diagram_750x350.png" alt="Vector Embedding Process" width="750" height="350"/>
 </p>
-
-
-
 
 1. **Raw data** (incidents, descriptions, etc.) is embedded into high-dimensional vectors.  
 2. FAISS is used for **vector similarity search**.  
@@ -75,9 +72,9 @@ streamlit run streamlit_app.py
 
 ## 🤖 LLM Setup
 
-- Embeddings: SentenceTransformers
+- Embeddings: SentenceTransformers (`all-MiniLM-L6-v2`)
 - Vector Store: FAISS
-- LLMs: OpenAI GPT-3.5 or Hugging Face Mistral 7B
+- LLMs: OpenAI GPT-3.5 (primary), Hugging Face Mistral 7B (fallback)
 
 > Set your OpenAI API Key:
 ```bash
@@ -93,16 +90,84 @@ export OPENAI_API_KEY=your-key
 
 ---
 
-## 🧭 Roadmap
+## 🔁 Power of Two Models – Smart Fallback Built In
 
-- LLM confidence scoring  
-- Feedback loop for RCA validation  
-- Real-time incident ingestion  
-- LangChain integration  
-- Multi-incident comparison
+Sigma-AI is designed to be resilient and flexible with **dual model capability**:
+
+- ⚡ **Primary Model**: OpenAI GPT-3.5 is used for generating deep, contextual RCA and resolution suggestions.
+- 🔄 **Fallback Model**: Hugging Face's Mistral 7B (via transformers) is automatically used when OpenAI API limits are hit or credentials are missing.
+
+This smart fallback ensures uninterrupted RCA generation, giving your team consistent insights whether you're using cloud APIs or local models.
 
 ---
 
-## 🤝 Contributions
+## 🧱 System Architecture
 
-PRs and ideas are welcome! Feel free to fork and suggest improvements.
+```
+User Input (Incident ID or Free Text)
+        |
+[Embedding Model: all-MiniLM-L6-v2]
+        |
+   [Vector Embedding]
+        |
+FAISS Similarity Search (Euclidean Distance)
+        |
+Retrieve Top-K Similar Incidents
+        |
+[LLM: GPT / Mistral]
+→ RCA Generation   → Resolution Suggestion
+        |
+CR + Log Correlation (CMDB + Trace ID)
+```
+
+---
+
+## 🤝 How to Contribute
+
+We welcome community contributions to make Sigma-AI better!
+
+1. **Fork** the repository on GitHub  
+2. **Clone** your forked repo locally  
+3. Create a new branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+4. Make your changes and test them  
+5. Commit and push to your branch:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+6. Open a **Pull Request** on GitHub with a clear description
+
+### 📬 Suggestions / Issues
+
+- Found a bug? [Open an issue](https://github.com/your-repo/issues)  
+- Have an idea? Start a discussion or create a feature request!
+
+Let’s build an intelligent future for incident management together 🚀
+
+---
+
+## 📐 Similarity Search with FAISS (Gaussian Distance)
+
+Sigma-AI uses **FAISS** for high-speed vector similarity search. Unlike plain cosine or Euclidean metrics, we employ a **Gaussian similarity kernel** to better capture semantic closeness:
+
+### 🧪 Gaussian Distance Formula
+
+The similarity score **S(x, y)** between two vectors `x` and `y` is calculated as:
+
+```
+S(x, y) = exp(-‖x - y‖² / (2 * σ²))
+```
+
+Where:
+- `‖x - y‖²` is the squared Euclidean distance between embeddings
+- `σ` is a tunable scaling parameter (standard deviation of similarity distribution)
+- `exp()` applies the Gaussian kernel, giving higher weights to closer vectors
+
+This Gaussian similarity helps us:
+- Emphasize highly relevant matches
+- Soften sharp cutoffs from raw distance
+- Improve retrieval precision, especially with noisy or ambiguous queries
+
+This hybrid technique ensures that incident searches return **semantically meaningful results** even when phrased differently or across noisy operational data.
