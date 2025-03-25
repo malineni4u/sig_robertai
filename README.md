@@ -77,10 +77,6 @@ Sigma-AI intelligently uses:
 
 ---
 
----
-
----
-
 ## 📐 Incident Similarity Search with L2 (Euclidean) Distance
 
 Sigma-AI uses **FAISS** for high-performance similarity search based on **squared Euclidean (L2) distance**. This is used to compare vector embeddings and retrieve semantically similar incidents.
@@ -100,8 +96,6 @@ $$
 
 ---
 
-
----
 
 ## 🧠 Intelligence Stack
 
