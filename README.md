@@ -36,11 +36,11 @@
   Convert any natural language issue into vector embeddings and search similar incidents. Get RCA and related CRs powered by LLMs. 
     - Converts it into vector embeddings
     - Uses FAISS with Gaussian Distance to find similar past incidents
-    - Uses GenAI (LLMs) to provide:
       - Contextual incident matches
+    - Uses GenAI (LLMs) to provide:
       - Relevant RCA suggestions
       - Correlated CRs (Change Requests) based on CI and timing
-      - Helpful resolution summaries 
+      - Helpful resolution summaries & Log Summarization. 
   
 - 🧾 **Incident Investigator**  
   Enter a specific incident ID to generate contextual RCA, show related CRs, and suggest resolution.  
@@ -59,6 +59,7 @@
     - Builds a **dynamic network diagram** from CMDB data
     - Displays app-to-CI/API relationships
     - Helps teams understand dependency paths and potential breakpoints
+    - Have GenAI Capability to suggest, summarize and debug architectural issues. 
   
 - 💬 **Agentic Chatbot**  
   Ask questions, explore suggestions, and receive guidance directly through an LLM-powered assistant.
@@ -81,7 +82,6 @@ Sigma-AI intelligently uses:
 <p align="center">
   <img src="docs/mermain_chart_resized.png" alt="Sigma AI Architecture Diagram" width="700"/>
 </p>
-
 
 ---
 
@@ -157,17 +157,6 @@ Retrieve Top-K Similar Incidents
         |
 CR + Log Correlation (CMDB + Trace ID)
 ```
-
----
-
-## LLM & Intelligence Stack
-
-- 🔡 **Embedding**: `all-MiniLM-L6-v2`
-- 🔍 **Vector DB**: FAISS (Gaussian Distance)  
-- 🧠 **LLMs**:
-  - OpenAI GPT-3.5
-  - Mistral 7B
-  - LaMini-Flan-T5-783M
 
 ---
 
