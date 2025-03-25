@@ -31,26 +31,41 @@
 ---
 
 - 🧠 **Smart Issue Explorer**  
-  Convert any natural language issue into vector embeddings and search similar incidents. Get RCA and related CRs powered by LLMs.  
-  ![Smart Issue Explorer](https://img.icons8.com/emoji/48/brain-emoji.png)
-
+  Convert any natural language issue into vector embeddings and search similar incidents. Get RCA and related CRs powered by LLMs. 
+    - Converts it into vector embeddings
+    - Uses FAISS with Gaussian Distance to find similar past incidents
+    - Uses GenAI (LLMs) to provide:
+      - Contextual incident matches
+      - Relevant RCA suggestions
+      - Correlated CRs (Change Requests) based on CI and timing
+      - Helpful resolution summaries 
+  
 - 🧾 **Incident Investigator**  
   Enter a specific incident ID to generate contextual RCA, show related CRs, and suggest resolution.  
-  ![Incident Investigator](https://img.icons8.com/ios-filled/50/document--v1.png)
-
+    - Retrieves historical matches
+    - Applies LLM to generate a **Root Cause Analysis (RCA)**
+    - Suggests probable causes and next steps
+  
 - 🧬 **TraceIQ**  
   Feed logs from APIs, analyze them using LLMs, and receive suggestions based on trace ID and log content.  
-  ![TraceIQ](https://img.icons8.com/ios-filled/50/dna-helix.png)
+    - Reads logs from connected log injection APIs
+    - Applies LLM to suggest possible fixes
+    - Helps platform teams derive meaning from complex logs
 
 - 🌐 **NetViz Explorer**  
   Visualize app-to-CI/API dependencies using CMDB mapping and explore how components are connected.  
-  ![NetViz Explorer](https://img.icons8.com/ios-filled/50/internet.png)
-
+    - Builds a **dynamic network diagram** from CMDB data
+    - Displays app-to-CI/API relationships
+    - Helps teams understand dependency paths and potential breakpoints
+  
 - 💬 **Agentic Chatbot**  
   Ask questions, explore suggestions, and receive guidance directly through an LLM-powered assistant.
+  - Self-help for generalized platform queries
+  - Guidance on Sigma-AI usage
+  - Fast answers to system and RCA-related questions
+  - Direct interaction with knowledge embedded from your incidents, CRs, and CMDB
 
 ---
-
 
 ## Prerequisites
 
