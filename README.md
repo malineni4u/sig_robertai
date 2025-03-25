@@ -13,7 +13,7 @@
 
 1. [Steamlit UI Overview](#User-Interface)
 1. [Prerequisites](#prerequisites)
-2. [Installation](#installation)
+2. [Modesl](#Power)
 3. [Configuration](#configuration)
 4. [Running the Application](#running-the-application)
 5. [Features](#features)
@@ -66,6 +66,12 @@
   - Direct interaction with knowledge embedded from your incidents, CRs, and CMDB
 
 ---
+
+## 🔁 Power of Two Models – Smart Fallback
+
+Sigma-AI intelligently uses:
+- ⚡ **Primary**: OpenAI GPT-3.5 for RCA generation
+- 🔄 **Fallback**: Hugging Face Mistral 7B when OpenAI quota limits apply
 
 ## Prerequisites
 
