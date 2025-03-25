@@ -17,7 +17,7 @@
 
 ## 🧠 How It Works
 
-<img src="docs/vector_embedding_small.png" alt="Vector Embedding Process" width="600"/>
+<img src="docs/vector_emb.png" alt="Vector Embedding Process" width="600"/>
 
 
 1. **Raw data** (incidents, descriptions, etc.) is embedded into high-dimensional vectors.  
