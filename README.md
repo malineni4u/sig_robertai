@@ -79,13 +79,15 @@ Sigma-AI intelligently uses:
 
 ---
 
-## 📐 Incident Similarity Search with Gaussian Distance
+---
 
-Sigma-AI uses **FAISS** for high-performance similarity search. It computes the **squared Euclidean (L2) distance** between two vector embeddings, which is a foundational metric for semantic retrieval.
+## 📐 Incident Similarity Search with L2 (Euclidean) Distance
+
+Sigma-AI uses **FAISS** for high-performance similarity search based on **squared Euclidean (L2) distance**. This is used to compare vector embeddings and retrieve semantically similar incidents.
 
 ### 📏 L2 (Euclidean) Distance
 
-The standard L2 (Euclidean) distance between two vectors **x** and **y** is:
+The standard Euclidean distance between two vectors **x** and **y** is:
 
 <div align="center">
 
@@ -93,34 +95,8 @@ $$
 \\text{distance} = \\sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \\cdots + (x_n - y_n)^2}
 $$
 
-</div>
+</
 
-However, **FAISS** uses the **squared L2 distance** (without the square root) for performance optimization:
-
-<div align="center">
-
-$$
-\\text{squared\\_distance} = \\sum_{i=1}^{n}(x_i - y_i)^2
-$$
-
-</div>
-
-This squared distance is then passed through a **Gaussian kernel** to compute similarity:
-
-<div align="center">
-
-$$
-S(x, y) = \\exp\\left( -\\frac{\\|x - y\\|^2}{2\\sigma^2} \\right)
-$$
-
-</div>
-
-Where:
-
-- $\\|x - y\\|^2$ is the squared L2 distance between two vectors
-- $\\sigma$ is the standard deviation (controls the spread of similarity influence)
-
-The Gaussian function gives **soft, probabilistic similarity scores** and works well in high-dimensional vector spaces.
 
 ---
 
