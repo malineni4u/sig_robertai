@@ -17,7 +17,7 @@
 
 ## 🧠 How It Works
 
-![Vector Embedding Process](docs/vector_embedding.png)
+![Vector Embedding Process](docs/]vector_emb.png)
 
 1. **Raw data** (incidents, descriptions, etc.) is embedded into high-dimensional vectors.  
 2. FAISS is used for **vector similarity search**.  
