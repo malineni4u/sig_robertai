@@ -76,9 +76,12 @@ Sigma-AI intelligently uses:
 - 🔄 **Fallback**: Hugging Face Mistral 7B when OpenAI quota limits apply
 
 ---
-## Incident Analysis Flow Daigram 
+## 📊 Sigma-AI Architecture
 
-![Flow_Diagram](docs/mermain-chart.png)
+<p align="center">
+  <img src="docs/mermain_chart_resized.png" alt="Sigma AI Architecture Diagram" width="700"/>
+</p>
+
 
 ---
 
