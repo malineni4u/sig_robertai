@@ -1,7 +1,7 @@
 
 # 🤖 GenAI-Powered Integrated Platform Environment
 
-![Agentic AI](https://img.shields.io/badge/Powered_by-Agentic_AI-blueviolet?style=for-the-badge&logo=openai&logoColor=white)
+![Agentic AI](https://img.shields.io/badge/Built_with-Streamlit-orange)
 ![Context-Aware](https://img.shields.io/badge/Contextual-Recommendations-blue)
 ![Streamlit](https://img.shields.io/badge/Built_with-Streamlit-orange)
 
