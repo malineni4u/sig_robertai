@@ -18,7 +18,7 @@
 ## 🧠 How It Works
 
 <p align="center">
-  <img src="docs/vector_embedding_750x350.png" alt="Vector Embedding Process" width="7500" height="350"/>
+  <img src="docs/vector_emb.png" alt="Vector Embedding Process" width="7500" height="350"/>
 </p>
 
 
