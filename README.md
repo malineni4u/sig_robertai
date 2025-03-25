@@ -30,6 +30,8 @@
 
 ## 🖥️ User-Interface Overview
 
+![Sigma-AI UI Preview](docs/sigma_ui_preview.jpg)
+
 - 🧠 **Smart Issue Explorer**  
   Convert any natural language issue into vector embeddings and search similar incidents. Get RCA and related CRs powered by LLMs. 
     - Converts it into vector embeddings
