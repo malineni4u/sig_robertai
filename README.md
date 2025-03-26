@@ -91,11 +91,7 @@ $$
 \\text{distance} = \\sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \\cdots + (x_n - y_n)^2}
 $$
 
-</
-
-
----
-
+--
 
 ## 🧠 Intelligence Stack
 
@@ -212,7 +208,6 @@ streamlit run streamlit_app.py
 MIT License
 
 ---
-
 ## Acknowledgments
 
 - Hugging Face
