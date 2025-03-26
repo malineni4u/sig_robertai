@@ -12,21 +12,20 @@
 ## 📑 Table of Contents
 
 1. [Introduction](#-introduction)
-2. [User-Interface Overview](#-user-interface-overview)
 2. [Demo](#-demo)
-2. [Multi-Model Strategy – Smart Fallback Mechanism](#-multi-model-strategy--smart-fallback-mechanism)
-3. [Sigma-AI Solution Architecture Overview](#-sigma-ai-solution-architecture-overview)
-4. [Incident Similarity Search with L2 (Euclidean) Distance](#-incident-similarity-search-with-l2-euclidean-distance)
-5. [Intelligence Stack](#-intelligence-stack)
-6. [Project Structure](#-project-structure)
-7. [System Architecture](#system-architecture)
-8. [Installation](#-installation)
-9. [Configuration](#-configuration)
-10. [Running the Application](#-running-the-application)
-11. [Usage](#Usage)
-12. [Troubleshooting](#Troubleshooting)
-13. [License](#License)
-14. [Acknowledgments](#Acknowledgments)
+3. [User-Interface Overview](#️-user-interface-overview)
+4. [Multi-Model Strategy – Smart Fallback Mechanism](#-multi-model-strategy--smart-fallback-mechanism)
+5. [Sigma-AI Solution Architecture Overview](#-sigma-ai-solution-architecture-overview)
+6. [Incident Similarity Search with L2 (Euclidean) Distance](#-incident-similarity-search-with-l2-euclidean-distance)
+7. [Intelligence Stack](#-intelligence-stack)
+8. [Project Structure](#-project-structure)
+9. [System Architecture](#system-architecture)
+11. [Installation](#-installation)
+12. [Configuration](#️-configuration)
+13. [Running the Application](#-running-the-application)
+14. [Usage](#-usage)
+15. [Troubleshooting](#-usage)
+16. [Team]
 
 ---
 
@@ -192,15 +191,8 @@ streamlit run streamlit_app.py
 
 ---
 
-## 📜 License
+## 👥 Team
+- **Pradeep Malineni** - [malineni4u](#) | [LinkedIn](#www.linkedin.com/in/pradeep-malineni)
+- **Bhumika Peshwani** - [Bhumika158](#) | [LinkedIn](www.linkedin.com/in/bhumika158)
 
-MIT License
-
----
-
-## 🙏 Acknowledgments
-
-- Hugging Face
-- OpenAI
-- Streamlit
-- FAISS Team
+----
