@@ -69,11 +69,28 @@
 
 ---
 
-## 🔁 Power of Two Models – Smart Fallback
+## 🔄 Multi-Model Strategy – Smart Fallback Mechanism
 
-Sigma-AI intelligently uses:
-- ⚡ **Primary**: OpenAI GPT-3.5 for RCA generation
-- 🔄 **Fallback**: Hugging Face Mistral 7B when OpenAI quota limits apply
+Sigma-AI intelligently employs multiple models, leveraging the strengths of each for different contexts and workloads, and provides a smart fallback strategy to ensure seamless performance:
+
+- ⚡ **Primary Model (OpenAI GPT-3.5)**:
+  - Handles complex RCA (Root Cause Analysis) generation, detailed GenAI responses, and advanced reasoning tasks.
+  - Optimized for accuracy, coherence, and contextual understanding.
+
+- 🔄 **Fallback Model (LaMini-Flan-T5-783M, Hugging Face)**:
+  - CPU-friendly alternative to GPT-3.5 for scenarios where API access is limited or unavailable.
+  - Provides robust, reliable text-generation capabilities for RCA and general responses with optimized resource utilization.
+
+- 📘 **IntelScope Summarization (facebook/bart-large-cnn, Hugging Face)**:
+  - Specialized for efficient summarization of uploaded documents, articles, and textual data.
+  - Produces concise, coherent summaries aiding quick comprehension and insights.
+
+- 📋 **Log Summarization (sshleifer/distilbart-cnn-12-6, Hugging Face)**:
+  - Tailored specifically for summarizing logs and trace data, simplifying complex logs into easily understandable summaries.
+  - Assists platform teams in rapid log analysis and debugging activities.
+
+This multi-model integration ensures Sigma-AI maintains high reliability, availability, and quality of results, adapting dynamically to workload conditions and resource availability.
+
 
 ---
 ## 📊 Sigma-AI Architecture
@@ -106,28 +123,36 @@ Sigma-AI brings together multiple components to power its intelligence:
 - 🔡 **Embedding Model**: all-MiniLM-L6-v2 from SentenceTransformers  
 - 🔍 **Vector Search Engine**: FAISS  
 - 🧠 **LLMs**:
-  - OpenAI GPT-3.5
-  - Hugging Face's Mistral 7B
-  - LaMini-Flan-T5-783M
+  - OpenAI GPT-3.5 (Primary Model)
+  - Hugging Face's LaMini-Flan-T5-783M (Fallback Model)
+  - facebook/bart-large-cnn (IntelScope Summarization)
+  - sshleifer/distilbart-cnn-12-6 (Log Summarization)
+
 
 ---
 
 ## 📂 Project Structure
 ```
 .
+📂 Project Structure
 ├── streamlit_app.py
 ├── app/
 │   ├── data_loader.py
 │   ├── vector_search.py
 │   ├── model_runner.py
 │   ├── change_checker.py
-│   └── log_checker.py
+│   ├── log_checker.py
+│   ├── chatbot.py
+│   ├── network_viz.py
+│   └── intelscope.py
 ├── data/
 │   ├── incident_data.csv
 │   ├── change.csv
 │   ├── CMDB_Mapping.csv
-│   └── Logs_Lookup.csv
+│   ├── Logs_Lookup.csv
+│   └── network_metadata.csv
 └── requirements.txt
+
 
 ```
 ---
@@ -140,7 +165,7 @@ User Input (Incident ID or Free Text)
         |
    [Vector Embedding]
         |
-FAISS Similarity Search (Gaussian Distance)
+FAISS Similarity Search (Euclidean Distance (L2))
         |
 Retrieve Top-K Similar Incidents
         |
@@ -154,10 +179,11 @@ CR + Log Correlation (CMDB + Trace ID)
 
 ## Installation
 
-bash
-git clone https://github.com/your-username/sigma-ai.git
-cd sigma-ai
+python -m venv sigma_env
+source sigma_env/bin/activate   # (Linux/MacOS)
+sigma_env\Scripts\activate      # (Windows)
 pip install -r requirements.txt
+
 
 
 ---
@@ -209,3 +235,4 @@ MIT License
 - Streamlit
 - FAISS team
                                       
+    
