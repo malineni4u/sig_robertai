@@ -93,7 +93,7 @@ This multi-model integration ensures Sigma-AI maintains high reliability, availa
 
 
 ---
-## 📊 Sigma-AI Architecture
+## 📊 Sigma-AI Solution Architecture Overview
 
 <p align="center">
   <img src="docs/mermain-chart-min.png" alt="Sigma AI Architecture Diagram" width="324"/>
@@ -128,13 +128,12 @@ Sigma-AI brings together multiple components to power its intelligence:
   - facebook/bart-large-cnn (IntelScope Summarization)
   - sshleifer/distilbart-cnn-12-6 (Log Summarization)
 
-
 ---
 
 ## 📂 Project Structure
 ```
 .
-📂 Project Structure
+📂 Sigma-AI
 ├── streamlit_app.py
 ├── app/
 │   ├── data_loader.py
@@ -240,5 +239,3 @@ MIT License
 - OpenAI
 - Streamlit
 - FAISS team
-                                      
-    
