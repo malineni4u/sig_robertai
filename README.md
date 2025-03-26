@@ -192,7 +192,7 @@ streamlit run streamlit_app.py
 ---
 
 ## 👥 Team
-- **Pradeep Malineni** - [GitHUb](https://github.com/malineni4u) | [LinkedIn](www.linkedin.com/in/pradeep-malineni)
-- **Bhumika Peshwani** - [GitHUb](https://github.com/Bhumika158) | [LinkedIn](www.linkedin.com/in/bhumika158)
+- **Pradeep Malineni** - [GitHUb](https://github.com/malineni4u) | [LinkedIn](https://linkedin.com/in/pradeep-malineni)
+- **Bhumika Peshwani** - [GitHUb](https://github.com/Bhumika158) | [LinkedIn](https://linkedin.com/in/bhumika158)
 
 ----
