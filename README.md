@@ -79,7 +79,7 @@ Sigma-AI intelligently uses:
 ## 📊 Sigma-AI Architecture
 
 <p align="center">
-  <img src="docs/mermain-chart.png" alt="Sigma AI Architecture Diagram" width="700"/>
+  <img src="docs/mermain-chart-min.png" alt="Sigma AI Architecture Diagram" width="700"/>
 </p>
 
 ---
