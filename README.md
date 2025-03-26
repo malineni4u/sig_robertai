@@ -43,7 +43,7 @@
 
 ## 🖥️ User-Interface Overview
 
-![Sigma-AI UI Preview](docs/sigma_ui_preview.jpg)
+![Sigma-AI UI Preview](images/image.png)
 
 - 🧠 **Smart Issue Explorer**  
   Converts natural language issues into embeddings, finds similar incidents via FAISS (L2 distance), and generates GenAI-powered RCA and correlated CR suggestions.
