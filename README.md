@@ -57,7 +57,7 @@
 - 🌐 **NetViz Explorer**  
   Visualizes dependencies and suggests architectural insights powered by GenAI.
 
-- 💬 **Agentic Chatbot**  
+- 💬 **Agentic Chatbot Dora 👧**  
   Assists with self-service RCA, logs, and CMDB queries.
 
 ---
