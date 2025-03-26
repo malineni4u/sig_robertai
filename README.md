@@ -92,8 +92,6 @@ Sigma-AI uses **FAISS** for high-performance similarity search based on **square
 
 The standard Euclidean distance between two vectors **x** and **y** is:
 
-<div align="center">
-
 $$
 \\text{distance} = \\sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \\cdots + (x_n - y_n)^2}
 $$
