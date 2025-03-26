@@ -25,6 +25,7 @@
 13. [Running the Application](#-running-the-application)
 14. [Usage](#-usage)
 15. [Troubleshooting](#-usage)
+17. [HyperParaMeters](#-intelligence-stack--hyperparameters)
 16. [Team](#-team)
 
 ---
