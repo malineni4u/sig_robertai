@@ -96,7 +96,7 @@ This multi-model integration ensures Sigma-AI maintains high reliability, availa
 ## 📊 Sigma-AI Architecture
 
 <p align="center">
-  <img src="docs/mermain-chart-min.png" alt="Sigma AI Architecture Diagram" width="700"/>
+  <img src="docs/mermain-chart-min.png" alt="Sigma AI Architecture Diagram" width="324"/>
 </p>
 
 ---
@@ -240,3 +240,5 @@ MIT License
 - OpenAI
 - Streamlit
 - FAISS team
+                                      
+    
