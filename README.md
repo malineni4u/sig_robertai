@@ -11,7 +11,9 @@
 
 ## 📑 Table of Contents
 
-1. [User-Interface Overview](#-user-interface-overview)
+1. [Introduction](#-introduction)
+2. [User-Interface Overview](#-user-interface-overview)
+2. [Demo](#-demo)
 2. [Multi-Model Strategy – Smart Fallback Mechanism](#-multi-model-strategy--smart-fallback-mechanism)
 3. [Sigma-AI Solution Architecture Overview](#-sigma-ai-solution-architecture-overview)
 4. [Incident Similarity Search with L2 (Euclidean) Distance](#-incident-similarity-search-with-l2-euclidean-distance)
@@ -27,6 +29,18 @@
 14. [Acknowledgments](#Acknowledgments)
 
 ---
+
+## 🎯 Introduction
+**Sigma-AI** is a GenAI-enabled Integrated Platform Environment (IPE) application that empowers platform engineering teams by combining multiple tool capabilities into a **single intelligent interface**. It reduces context switching, streamlines operations, and introduces **Agentic AI capabilities** like:
+
+- 🔁 Contextual understanding of incidents and system data  
+- 💡 Intelligent recommendations based on historical and real-time context  
+- 🧠 Root cause analysis using LLMs  
+- ✍️ Automated description reframing for better incident clarity  
+- 🔍 Extraction of key data points and correlations from change logs, incident history, and trace logs  
+
+## 🎥 Demo
+🔗 [Live Demo](#) (if applicable)  
 
 ## 🖥️ User-Interface Overview
 
