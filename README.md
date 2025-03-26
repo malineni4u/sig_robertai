@@ -159,7 +159,7 @@ Sigma-AI brings together multiple components to power its intelligence:
 
 ## System Architecture
 
-```
+```bash
 
 User Input (Incident ID or Free Text)
         |
@@ -179,35 +179,35 @@ CR + Log Correlation (CMDB + Trace ID)
 ```
 ---
 
-## Installation
-
+## 🛠️ Installation
+```bash
 git clone https://github.com/your-username/sigma-ai.git
 cd sigma-ai
-
+```
 **On Linux/macOS:**
+```bash
 python -m venv sigma_env
 source sigma_env/bin/activate
-
+```
 **On Windos OS**
+```bash
 python -m venv sigma_env
 sigma_env\Scripts\activate
-
 pip install -r requirements.txt
-
+```
 ---
 
-## Configuration
-
-bash
+## ⚙️ Configuration
+```bash
 export OPENAI_API_KEY=your-key
+```
 
 ---
 
-## Running the Application
-
-bash
+## 🚀 Running the Application
+```bash
 streamlit run streamlit_app.py
-
+```
 ---
 
 ## Usage
