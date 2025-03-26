@@ -1,4 +1,3 @@
-
 # 🤖 GenAI-Powered Integrated Platform Environment
 
 ![Agentic AI](https://img.shields.io/badge/Powered_by-Agentic_AI-blueviolet)
@@ -36,11 +35,11 @@
   Convert any natural language issue into vector embeddings and search similar incidents. Get RCA and related CRs powered by LLMs. 
     - Converts it into vector embeddings
     - Uses FAISS with Gaussian Distance to find similar past incidents
-    - Uses GenAI (LLMs) to provide:
       - Contextual incident matches
+    - Uses GenAI (LLMs) to provide:
       - Relevant RCA suggestions
       - Correlated CRs (Change Requests) based on CI and timing
-      - Helpful resolution summaries 
+      - Helpful resolution summaries & Log Summarization. 
   
 - 🧾 **Incident Investigator**  
   Enter a specific incident ID to generate contextual RCA, show related CRs, and suggest resolution.  
@@ -59,6 +58,7 @@
     - Builds a **dynamic network diagram** from CMDB data
     - Displays app-to-CI/API relationships
     - Helps teams understand dependency paths and potential breakpoints
+    - Have GenAI Capability to suggest, summarize and debug architectural issues. 
   
 - 💬 **Agentic Chatbot**  
   Ask questions, explore suggestions, and receive guidance directly through an LLM-powered assistant.
@@ -76,25 +76,49 @@ Sigma-AI intelligently uses:
 - 🔄 **Fallback**: Hugging Face Mistral 7B when OpenAI quota limits apply
 
 ---
+## 📊 Sigma-AI Architecture
 
+<p align="center">
+  <img src="docs/mermain-chart.png" alt="Sigma AI Architecture Diagram" width="700"/>
+</p>
+
+---
+
+## 📐 Incident Similarity Search with L2 (Euclidean) Distance
+
+Sigma-AI uses **FAISS** for high-performance similarity search based on **squared Euclidean (L2) distance**. This is used to compare vector embeddings and retrieve semantically similar incidents.
+
+### 📏 L2 (Euclidean) Distance
+
+The standard Euclidean distance between two vectors **x** and **y** is:
+
+<div align="center">
+
+$$
+\\text{distance} = \\sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \\cdots + (x_n - y_n)^2}
+$$
+
+</
+
+
+---
 
 
 ## 🧠 Intelligence Stack
 
 Sigma-AI brings together multiple components to power its intelligence:
 
-- 🔡 **Embedding Model**: `all-MiniLM-L6-v2` from SentenceTransformers  
+- 🔡 **Embedding Model**: all-MiniLM-L6-v2 from SentenceTransformers  
 - 🔍 **Vector Search Engine**: FAISS  
 - 🧠 **LLMs**:
   - OpenAI GPT-3.5
   - Hugging Face's Mistral 7B
-  - `LaMini-Flan-T5-783M`
+  - LaMini-Flan-T5-783M
 
 ---
 
 ## 📂 Project Structure
 
-```
 .
 ├── streamlit_app.py
 ├── app/
@@ -109,13 +133,12 @@ Sigma-AI brings together multiple components to power its intelligence:
 │   ├── CMDB_Mapping.csv
 │   └── Logs_Lookup.csv
 └── requirements.txt
-```
+
 
 ---
 
 ## System Architecture
 
-```
 User Input (Incident ID or Free Text)
         |
 [Embedding Model: all-MiniLM-L6-v2]
@@ -130,44 +153,33 @@ Retrieve Top-K Similar Incidents
 → RCA Generation   → Resolution Suggestion
         |
 CR + Log Correlation (CMDB + Trace ID)
-```
 
----
-
-## LLM & Intelligence Stack
-
-- 🔡 **Embedding**: `all-MiniLM-L6-v2`
-- 🔍 **Vector DB**: FAISS (Gaussian Distance)  
-- 🧠 **LLMs**:
-  - OpenAI GPT-3.5
-  - Mistral 7B
-  - LaMini-Flan-T5-783M
 
 ---
 
 ## Installation
 
-```bash
+bash
 git clone https://github.com/your-username/sigma-ai.git
 cd sigma-ai
 pip install -r requirements.txt
-```
+
 
 ---
 
 ## Configuration
 
-```bash
+bash
 export OPENAI_API_KEY=your-key
-```
+
 
 ---
 
 ## Running the Application
 
-```bash
+bash
 streamlit run streamlit_app.py
-```
+
 
 ---
 
@@ -194,9 +206,11 @@ streamlit run streamlit_app.py
 MIT License
 
 ---
+
 ## Acknowledgments
 
 - Hugging Face
 - OpenAI
 - Streamlit
 - FAISS team
+                                      
