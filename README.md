@@ -159,6 +159,8 @@ Sigma-AI brings together multiple components to power its intelligence:
 
 ## System Architecture
 
+```
+
 User Input (Incident ID or Free Text)
         |
 [Embedding Model: all-MiniLM-L6-v2]
@@ -174,17 +176,23 @@ Retrieve Top-K Similar Incidents
         |
 CR + Log Correlation (CMDB + Trace ID)
 
-
+```
 ---
 
 ## Installation
 
+git clone https://github.com/your-username/sigma-ai.git
+cd sigma-ai
+
+**On Linux/macOS:**
 python -m venv sigma_env
-source sigma_env/bin/activate   # (Linux/MacOS)
-sigma_env\Scripts\activate      # (Windows)
+source sigma_env/bin/activate
+
+**On Windos OS**
+python -m venv sigma_env
+sigma_env\Scripts\activate
+
 pip install -r requirements.txt
-
-
 
 ---
 
@@ -193,14 +201,12 @@ pip install -r requirements.txt
 bash
 export OPENAI_API_KEY=your-key
 
-
 ---
 
 ## Running the Application
 
 bash
 streamlit run streamlit_app.py
-
 
 ---
 
@@ -234,5 +240,3 @@ MIT License
 - OpenAI
 - Streamlit
 - FAISS team
-                                      
-    
