@@ -116,7 +116,7 @@ Sigma-AI brings together multiple components to power its intelligence:
 ---
 
 ## 📂 Project Structure
-
+```
 .
 ├── streamlit_app.py
 ├── app/
@@ -132,7 +132,7 @@ Sigma-AI brings together multiple components to power its intelligence:
 │   └── Logs_Lookup.csv
 └── requirements.txt
 
-
+```
 ---
 
 ## System Architecture
