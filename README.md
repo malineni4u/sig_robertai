@@ -43,7 +43,7 @@
 
 ## 🖥️ User-Interface Overview
 
-![Sigma-AI UI Preview](images/image.png)
+![Sigma-AI UI Preview](docs/sigma_ui_preview.jpg)
 
 - 🧠 **Smart Issue Explorer**  
   Converts natural language issues into embeddings, finds similar incidents via FAISS (L2 distance), and generates GenAI-powered RCA and correlated CR suggestions.
@@ -57,7 +57,7 @@
 - 🌐 **NetViz Explorer**  
   Visualizes dependencies and suggests architectural insights powered by GenAI.
 
-- 💬 **Agentic Chatbot Dora 👧**  
+- 💬 **Agentic Chatbot: Dorra**  
   Assists with self-service RCA, logs, and CMDB queries.
 
 ---
@@ -180,6 +180,18 @@ streamlit run streamlit_app.py
 3. TraceIQ: Log analysis and summarization.
 4. NetViz Explorer: Dependency visualization.
 5. Chatbot: Self-help and system queries.
+
+---
+
+## 🚀 Intelligence Stack & Hyperparameters
+
+| Module/File          | Model(s)                                                  | Hyperparameters & Settings                                                                                 |
+|----------------------|-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| `intelscope.py`      | Facebook BART Large CNN (`facebook/bart-large-cnn`)       | `max_length=200`, `min_length=50`, `do_sample=False`, Chunk size=1024 tokens, Step size=800 tokens        |
+| `model_runner.py`    | Hugging Face LaMini-Flan-T5-783M (`MBZUAI/LaMini-Flan-T5-783M`) | `max_length=512`, `do_sample=True`, `temperature=0.7`, `top_p=0.9`, Input truncate=1100 tokens            |
+| `model_runner.py`    | OpenAI GPT-3.5 Turbo (`gpt-3.5-turbo`)                    | `temperature=0.3` (RCA), `temperature=0.4` (Network queries)                                              |
+| `vector_search.py`   | SentenceTransformer (`all-MiniLM-L6-v2`) + FAISS          | `top_k=3`, Vector Index: FAISS `IndexFlatL2` (squared Euclidean distance)                                 |
+
 
 ---
 
