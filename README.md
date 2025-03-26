@@ -21,10 +21,10 @@
 8. [Installation](#-installation)
 9. [Configuration](#-configuration)
 10. [Running the Application](#-running-the-application)
-11. [Usage](#usage)
-12. [Troubleshooting](#troubleshooting)
-13. [License](#license)
-14. [Acknowledgments](#acknowledgments)
+11. [Usage](#Usage)
+12. [Troubleshooting](#Troubleshooting)
+13. [License](#License)
+14. [Acknowledgments](#Acknowledgments)
 
 ---
 
@@ -113,12 +113,6 @@ $$
 │   └── network_metadata.csv
 └── requirements.txt
 ```
-
----
-
-## System Architecture
-
-User Input (Incident ID/Text) → Embedding (MiniLM-L6) → FAISS (L2) → Retrieve Similar Incidents → LLM (GPT / LaMini) RCA Generation → Correlation with Logs & CR.
 
 ---
 
